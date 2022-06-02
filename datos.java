@@ -7,19 +7,19 @@ public class datos {
         String nombre, apellido, palabra;
         boolean sexo;
         int edad;
-        Scanner leer = new Scanner(System.in);
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Digite el nombre:");
+            nombre = leer.next();
 
-        System.out.println("Digite el nombre:");
-        nombre = leer.next();
+            System.out.println("Digite el apellido:");
+            apellido = leer.next();
 
-        System.out.println("Digite el apellido:");
-        apellido = leer.next();
+            System.out.println("Digite el sexo (M = true o F = false):");
+            sexo = leer.nextBoolean();
 
-        System.out.println("Digite el sexo (M o F):");
-        sexo = leer.nextBoolean();
-
-        System.out.println("Digite la edad:");
-        edad = leer.nextInt();
+            System.out.println("Digite la edad:");
+            edad = leer.nextInt();
+        }
 
         if (sexo) {
             palabra = "Masculino";
