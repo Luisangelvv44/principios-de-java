@@ -5,26 +5,15 @@ public class ultimodigito {
     public static void main(String[] args) {
     
         Scanner leer = new Scanner(System.in);
-        int numeroUno, numeroDos, resultadoUno, resultadoDos;
-        String numeroUnoATexto, numeroDosATexto;
-        String[] textoUno, textoDos;
+        String[] numeroUno, numeroDos;
 
         System.out.println("Digite el primer numero:");
-        numeroUno = leer.nextInt();
+        numeroUno = leer.next().split("");
 
         System.out.println("Digite el segundo numero:");
-        numeroDos = leer.nextInt();
+        numeroDos = leer.next().split("");
 
-        numeroUnoATexto = numeroUno + "";
-        numeroDosATexto = numeroDos + "";
-
-        textoUno = numeroUnoATexto.split(""); // 50 int -> '50' String -> ['5', '0']
-        textoDos = numeroDosATexto.split("");
-
-        resultadoUno = Integer.parseInt(textoUno[textoUno.length - 1]); // String '0' -> int 0
-        resultadoDos = Integer.parseInt(textoDos[textoDos.length - 1]);
-
-        if ( resultadoUno == resultadoDos ) {
+        if ( numeroUno[numeroUno.length - 1].equals(numeroDos[numeroDos.length - 1]) ) {
             System.out.println("La ultima cifra de estos dos numeros son iguales");
         } else {
             System.out.println("La ultima cifra de estos dos numeros no son iguales");
