@@ -4,8 +4,7 @@ public class datos {
     
     public static void main(String[] args) {
 
-        String nombre, apellido, palabra;
-        boolean sexo;
+        String nombre, apellido, palabra, sexo;
         int edad;
         try (Scanner leer = new Scanner(System.in)) {
             System.out.println("Digite el nombre:");
@@ -15,13 +14,13 @@ public class datos {
             apellido = leer.next();
 
             System.out.println("Digite el sexo (M = true o F = false):");
-            sexo = leer.nextBoolean();
+            sexo = leer.next();
 
             System.out.println("Digite la edad:");
             edad = leer.nextInt();
         }
 
-        if (sexo) {
+        if (sexo == "m") {
             palabra = "Masculino";
         } else {
             palabra = "femenino";
